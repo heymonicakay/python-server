@@ -1,6 +1,8 @@
 import json
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from animals import get_all_animals, get_single_animal, create_animal, delete_animal, update_animal
+from employees import get_all_employees, get_single_employee, create_employee, delete_employee, update_employee
+from locations import get_all_locations, get_single_location, create_location, delete_location, update_location
 
 
 # Here's a class. It inherits from another class.
@@ -47,6 +49,19 @@ class HandleRequests(BaseHTTPRequestHandler):
 
             else:
                 response = f"{get_all_animals()}"
+        if resource == "employees":
+            if id is not None:
+                response = f"{get_single_employee(id)}"
+
+            else:
+                response = f"{get_all_employees()}"
+
+        if resource == "locations":
+            if id is not None:
+                response = f"{get_single_location(id)}"
+
+            else:
+                response = f"{get_all_locations()}"
 
         self.wfile.write(response.encode())
 
@@ -75,6 +90,22 @@ class HandleRequests(BaseHTTPRequestHandler):
         # Encode the new animal and send in response
         self.wfile.write(f"{new_animal}".encode())
 
+        new_employee = None
+
+        if resource == "employees":
+            new_employee = create_employee(post_body)
+
+        # Encode the new animal and send in response
+        self.wfile.write(f"{new_employee}".encode())
+
+        new_location = None
+
+        if resource == "locations":
+            new_location = create_location(post_body)
+
+        # Encode the new animal and send in response
+        self.wfile.write(f"{new_location}".encode())
+
     def do_DELETE(self):
     # Set a 204 response code
         self._set_headers(204)
@@ -85,6 +116,12 @@ class HandleRequests(BaseHTTPRequestHandler):
         # Delete a single animal from the list
         if resource == "animals":
             delete_animal(id)
+
+        if resource == "employees":
+            delete_employee(id)
+
+        if resource == "locations":
+            delete_location(id)
 
         # Encode the new animal and send in response
         self.wfile.write("".encode())
@@ -102,9 +139,18 @@ class HandleRequests(BaseHTTPRequestHandler):
         if resource == "animals":
             update_animal(id, post_body)
 
-        # Encode the new animal and send in response
         self.wfile.write("".encode())
 
+        if resource == "employees":
+            update_employee(id, post_body)
+
+        self.wfile.write("".encode())
+
+        if resource == "locations":
+            update_location(id, post_body)
+
+        # Encode the new animal and send in response
+        self.wfile.write("".encode())
 
 
 # This function is not inside the class. It is the starting
