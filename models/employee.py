@@ -1,9 +1,6 @@
-class Animal():
-    
-    def __init__(self, name, species, status, location_id, customer_id):
+class Employee():
+
+    def __init__(self, name, location_id, animal_id):
         self.name = name
-        self.species = species
-        self.breed = breed
-        self.status = status
         self.location_id = location_id
-        self.customer_id = customer_id
+        self.animal_id = animal_id
