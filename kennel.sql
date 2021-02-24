@@ -35,26 +35,37 @@ CREATE TABLE `Employee` (
 
 
 
-INSERT INTO `Location` VALUES (null, 'Nashville North', "64 Washington Heights");
-INSERT INTO `Location` VALUES (null, 'Nashville South', "101 Penn Ave");
+INSERT INTO `Location` VALUES (null, 'Nashville North', "72 North Road");
+INSERT INTO `Location` VALUES (null, 'Nashville South', "100 South Street");
+INSERT INTO `Location` VALUES (null, 'Nashville East', "200 East Ave");
+INSERT INTO `Location` VALUES (null, 'Nashville West', "300 West Blvd");
 
 
-INSERT INTO `Employee` VALUES (null, "Madi Peper", "35498 Madison Ave", 1);
-INSERT INTO `Employee` VALUES (null, "Kristen Norris", "100 Main St", 1);
-INSERT INTO `Employee` VALUES (null, "Meg Ducharme", "404 Unknown Ct", 2);
-INSERT INTO `Employee` VALUES (null, "Hannah Hall", "204 Empty Ave", 1);
-INSERT INTO `Employee` VALUES (null, "Leah Hoefling", "200 Success Way", 2);
+INSERT INTO `Employee` VALUES (null, "Mario Kart", "100 Rainbow Road", 1);
+INSERT INTO `Employee` VALUES (null, "Luigi Mansion", "100 Dead End Street", 2);
+INSERT INTO `Employee` VALUES (null, "Wario", "200 Purple Park Place", 1);
+INSERT INTO `Employee` VALUES (null, "Bowser", "300 Lava Way", 2);
 
 
-INSERT INTO `Customer` VALUES (null, "Mo Silvera", "201 Created St", "mo@silvera.com", "password");
-INSERT INTO `Customer` VALUES (null, "Bryan Nilsen", "500 Internal Error Blvd", "bryan@nilsen.com", "password");
-INSERT INTO `Customer` VALUES (null, "Jenna Solis", "301 Redirect Ave", "jenna@solis.com", "password");
-INSERT INTO `Customer` VALUES (null, "Emily Lemmon", "454 Mulberry Way", "emily@lemmon.com", "password");
+INSERT INTO `Customer` VALUES (null, "Bilbo", "12 Rulemall Ave", "bill@bill.com", "bo");
+INSERT INTO `Customer` VALUES (null, "Frodo", "12 Findem Street", "fro@fro.com", "do");
+INSERT INTO `Customer` VALUES (null, "Gandolf", "12 Bringemall Drive", "gan@gan.com", "dolf");
+INSERT INTO `Customer` VALUES (null, "Samwise", "12 Darkness Bindem Blvd", "sam@sam.com", "wise");
 
 
+INSERT INTO `Animal` VALUES (null, "Aragog", "Feeding", "Acromantula", 4, 1);
+INSERT INTO `Animal` VALUES (null, "Fluffy", "Sleeping", "Three Headed Dog", 3, 1);
+INSERT INTO `Animal` VALUES (null, "Norbert", "Flying", "Norwegian Ridgeback", 2, 2);
+INSERT INTO `Animal` VALUES (null, "Hedwig", "Delivering A Letter", "Snowy Owl", 2, 2);
 
-INSERT INTO `Animal` VALUES (null, "Snickers", "Recreation", "Dalmation", 4, 1);
-INSERT INTO `Animal` VALUES (null, "Jax", "Treatment", "Beagle", 1, 1);
-INSERT INTO `Animal` VALUES (null, "Falafel", "Treatment", "Siamese", 4, 2);
-INSERT INTO `Animal` VALUES (null, "Doodles", "Kennel", "Poodle", 3, 1);
-INSERT INTO `Animal` VALUES (null, "Daps", "Kennel", "Boxer", 2, 2);
+SELECT * FROM `Animal`;
+SELECT * FROM `Location`;
+SELECT * FROM `Customer`;
+SELECT * FROM `Employee`;
+
+
+SELECT * FROM `Animal`
+ORDER BY id DESC;
+
+SELECT * FROM `Animal`
+WHERE id = 5;

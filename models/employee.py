@@ -1,6 +1,7 @@
-class Employee():
+class Employee:
 
-    def __init__(self, name, location_id, animal_id):
+    def __init__(self, id, name, location_id, address):
+        self.id = id
         self.name = name
         self.location_id = location_id
-        self.animal_id = animal_id
+        self.address = address
